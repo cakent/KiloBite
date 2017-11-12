@@ -1,5 +1,6 @@
 package com.bignerdranch.android.kilobite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,19 +36,36 @@ public class WorkoutListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI(){
         WorkoutLab workoutLab = WorkoutLab.get(getActivity());
         List<Workout> workouts = workoutLab.getWorkouts();
-        mAdapter = new WorkoutAdapter(workouts);
-        mWorkoutRecyclerView.setAdapter(mAdapter);
-    }
 
-    private class WorkoutHolder extends RecyclerView.ViewHolder{
+        if(mAdapter==null) {
+            mAdapter = new WorkoutAdapter(workouts);
+            mWorkoutRecyclerView.setAdapter(mAdapter);
+        }else{
+            mAdapter.notifyDataSetChanged();
+        }
+
+        }
+
+    private class WorkoutHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public WorkoutHolder (LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.list_item_workout,parent,false));
-
+            itemView.setOnClickListener(this);
             mExerciseTextView = (TextView) itemView.findViewById(R.id.exercise_name);
             mRepTextView = (TextView) itemView.findViewById(R.id.number_of_reps);
+        }
+
+        public void onClick(View view){
+            Intent intent = WorkoutActivity.newIntent(getActivity(),mWorkout.getWorkoutID());
+            startActivity(intent);
         }
         private Workout mWorkout;
         public void bind(Workout workout){
