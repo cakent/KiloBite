@@ -50,6 +50,7 @@ public class WorkoutListFragment extends Fragment {
             mAdapter = new WorkoutAdapter(workouts);
             mWorkoutRecyclerView.setAdapter(mAdapter);
         }else{
+            mAdapter.setWorkouts(workouts);
             mAdapter.notifyDataSetChanged();
         }
 
@@ -98,6 +99,10 @@ public class WorkoutListFragment extends Fragment {
         @Override
         public int getItemCount(){
             return mWorkouts.size();
+        }
+
+        public void setWorkouts(List<Workout> workouts){
+            mWorkouts=workouts;
         }
     }
 

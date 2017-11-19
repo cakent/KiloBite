@@ -38,6 +38,11 @@ public class WorkoutFragment extends Fragment {
         UUID workoutId = (UUID) getArguments().getSerializable(ARG_WORKOUT_ID);
         mWorkout= WorkoutLab.get(getActivity()).getWorkout(workoutId);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        WorkoutLab.get(getActivity()).updateWorkout(mWorkout);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){

@@ -9,11 +9,37 @@ import java.util.UUID;
 public class Workout {
 //basic workout class
     public UUID getWorkoutID() {
+
+
         return mworkoutID;
     }
 
     private UUID mworkoutID;
     private String mExercise;
+    private Boolean mCompleted;
+    private int mWorkoutNum;
+    private int mReps;
+
+
+    public int getWorkoutNum() {
+        return mWorkoutNum;
+    }
+
+    public void setWorkoutNum(int workoutNum) {
+        mWorkoutNum = workoutNum;
+    }
+
+
+
+    public Boolean getCompleted() {
+        return mCompleted;
+    }
+
+    public void setCompleted(Boolean completed) {
+        mCompleted = completed;
+    }
+
+
 
     public String getExercise() {
         return mExercise;
@@ -31,11 +57,13 @@ public class Workout {
         mReps = reps;
     }
 
-    private int mReps;
+
 
     public Workout(){
-        mReps=100;
-        mExercise="Burpees";
-        mworkoutID = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Workout(UUID id){
+        mworkoutID = id;
     }
 }
