@@ -4,4 +4,7 @@
     <string name="current_weight">Current Weight</string>
     <string name="current_height">Current Height</string>
     <string name="submit_button">Get my Workouts!</string>
+    <string name="change_goals">Update Goals</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
 </resources>

@@ -15,10 +15,10 @@ public class Workout {
     }
 
     private UUID mworkoutID;
-    private String mExercise;
+    private String[] mExercise = new String[4];
     private Boolean mCompleted;
     private int mWorkoutNum;
-    private int mReps;
+    private int[] mReps = new int[4];
 
 
     public int getWorkoutNum() {
@@ -41,20 +41,27 @@ public class Workout {
 
 
 
-    public String getExercise() {
+    public String[] getExercise() {
         return mExercise;
     }
 
-    public void setExercise(String exercise) {
-        mExercise = exercise;
+    public void setExercise(String[] exercise) {
+        for(int i=0;i<exercise.length;i++){
+            mExercise[i]=exercise[i];
+        }
+
     }
 
-    public int getReps() {
+    public int[] getReps() {
         return mReps;
     }
 
-    public void setReps(int reps) {
-        mReps = reps;
+    public void setReps(int[] reps) {
+        for(int i=0;i<reps.length;i++){
+            mReps[i]=reps[i];
+        }
+
+
     }
 
 

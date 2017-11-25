@@ -31,6 +31,18 @@ public class User {
         this(1);
     }
 
+    public int getWorkoutsCompleted() {
+        return mWorkoutsCompleted;
+    }
+
+    public void addWorkoutCompleted(){
+        mWorkoutsCompleted++;
+    }
+
+    public void setWorkoutsCompleted(int workoutsCompleted) {
+        mWorkoutsCompleted = workoutsCompleted;
+    }
+
     public User(int id){
         mUserID = id;
         setCurrentWeight(0);
@@ -42,14 +54,6 @@ public class User {
     }
 
 
-
-    public int getWorkoutsCompleted() {
-        return mWorkoutsCompleted;
-    }
-
-    public void setWorkoutsCompleted(int workoutsCompleted) {
-        mWorkoutsCompleted = workoutsCompleted;
-    }
 
 
 

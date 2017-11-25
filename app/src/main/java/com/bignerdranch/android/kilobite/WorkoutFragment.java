@@ -3,9 +3,11 @@ package com.bignerdranch.android.kilobite;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.LayoutInflaterCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -22,6 +24,9 @@ public class WorkoutFragment extends Fragment {
     private TextView mExerciseName;
     private TextView mNumOfReps;
     private static final String ARG_WORKOUT_ID="workout_id";
+    private Button mCompleteButton;
+    private User mUser;
+    private static final String TAG ="WorkoutFragment";
 
     public static WorkoutFragment newInstance(UUID workoutID){
         Bundle args = new Bundle();
@@ -37,22 +42,54 @@ public class WorkoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID workoutId = (UUID) getArguments().getSerializable(ARG_WORKOUT_ID);
         mWorkout= WorkoutLab.get(getActivity()).getWorkout(workoutId);
+
+        mUser=UserLab.get(getActivity()).getUser(1);
+        Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
     }
     @Override
     public void onPause(){
         super.onPause();
         WorkoutLab.get(getActivity()).updateWorkout(mWorkout);
+        Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+        UserLab.get(getActivity()).updateUser(mUser);
+        Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v =inflater.inflate(R.layout.fragment_workout, container, false);
 
+        mCompleteButton = (Button) v.findViewById(R.id.completeButton);
+        mCompleteButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+               mUser.addWorkoutCompleted();
+                Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+                mWorkout.setCompleted(true);
 
+            }
+        });
+        String[] workouts=mWorkout.getExercise();
+        int[] reps = mWorkout.getReps();
+
+         String workoutString ="";
+        String repString="";
+
+        workoutString=workouts[0];
+        for(int i =1;i<workouts.length;i++){
+            workoutString=workoutString+"/"+workouts[i];
+        }
+        repString=String.valueOf(reps[0]);
+        for(int i =1;i<reps.length;i++){
+            repString=repString+"/"+String.valueOf(reps[i]);
+        }
         mExerciseName = (TextView) v.findViewById(R.id.exercise_name);
-        mExerciseName.setText(mWorkout.getExercise());
+        mExerciseName.setText(workoutString);
         mNumOfReps =(TextView) v.findViewById(R.id.exericse_reps);
-        mNumOfReps.setText(Integer.toString(mWorkout.getReps()));
+        mNumOfReps.setText(repString);
+
         return v;
     }
 }

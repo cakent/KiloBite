@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -71,8 +72,8 @@ public class WorkoutListFragment extends Fragment {
         private Workout mWorkout;
         public void bind(Workout workout){
             mWorkout= workout;
-            mExerciseTextView.setText(mWorkout.getExercise());
-            mRepTextView.setText(Integer.toString(mWorkout.getReps()));
+            mExerciseTextView.setText(Integer.toString(mWorkout.getWorkoutNum()));
+            mRepTextView.setText(Arrays.toString(mWorkout.getReps()));
         }
     }
 

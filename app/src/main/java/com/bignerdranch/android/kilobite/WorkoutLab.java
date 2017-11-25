@@ -12,7 +12,9 @@ import com.bignerdranch.android.kilobite.database.WorkoutCursorWrapper;
 import com.bignerdranch.android.kilobite.database.WorkoutDBSchema;
 import com.bignerdranch.android.kilobite.database.WorkoutDBSchema.WorkoutTables;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -53,6 +55,22 @@ public class WorkoutLab {
 
         mContext= context.getApplicationContext();
         mDatabase= new WorkoutBaseHelper(mContext).getWritableDatabase();
+            if(getWorkouts().size()<1) {
+                Workout WOD = new Workout();
+                WOD.setCompleted(false);
+                WOD.setExercise(new String[]{"Burpees", "Squats"});
+                WOD.setReps(new int[]{10, 12});
+                WOD.setWorkoutNum(20);
+                addWorkout(WOD);
+                Workout WOD2 = new Workout();
+                WOD2.setCompleted(false);
+                WOD2.setExercise(new String[]{"Pushups", "Situps"});
+                WOD2.setReps(new int[]{10, 12});
+                WOD2.setWorkoutNum(10);
+                addWorkout(WOD2);
+
+            }
+
 
 
     }
@@ -107,8 +125,8 @@ public class WorkoutLab {
         ContentValues values = new ContentValues();
         values.put(WorkoutTables.Cols.UUID, workout.getWorkoutID().toString());
         values.put(WorkoutTables.Cols.COMPLETED,workout.getCompleted().toString());
-        values.put(WorkoutTables.Cols.EXERCISE,workout.getExercise().toString());
-        values.put(WorkoutTables.Cols.REPS,Integer.toString(workout.getReps()));
+        values.put(WorkoutTables.Cols.EXERCISE,Arrays.toString(workout.getExercise()));
+        values.put(WorkoutTables.Cols.REPS, Arrays.toString(workout.getReps()));
         values.put(WorkoutTables.Cols.WORKOUTNUM,Integer.toString(workout.getWorkoutNum()));
 
         return values;
