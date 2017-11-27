@@ -64,9 +64,9 @@ public class WorkoutFragment extends Fragment {
         mCompleteButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+                double newGoalWeight = mUser.getGoalWeight();
                mUser.addWorkoutCompleted();
-                Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
+                mUser.setGoalWeight((newGoalWeight-(newGoalWeight/18)));
                 mWorkout.setCompleted(true);
 
             }

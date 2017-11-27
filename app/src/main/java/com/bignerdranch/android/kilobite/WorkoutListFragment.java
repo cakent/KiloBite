@@ -70,10 +70,10 @@ public class WorkoutListFragment extends Fragment {
             startActivity(intent);
         }
         private Workout mWorkout;
-        public void bind(Workout workout){
+        public void bind(Workout workout,int i){
             mWorkout= workout;
-            mExerciseTextView.setText(Integer.toString(mWorkout.getWorkoutNum()));
-            mRepTextView.setText(Arrays.toString(mWorkout.getReps()));
+            mRepTextView.setText("Workout "+i+":");
+            mExerciseTextView.setText(Arrays.toString(mWorkout.getExercise()));
         }
     }
 
@@ -94,7 +94,7 @@ public class WorkoutListFragment extends Fragment {
         @Override
         public void onBindViewHolder(WorkoutHolder holder, int position){
             Workout workout = mWorkouts.get(position);
-            holder.bind(workout);
+            holder.bind(workout,position);
         }
 
         @Override

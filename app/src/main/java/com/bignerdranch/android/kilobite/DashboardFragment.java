@@ -132,6 +132,12 @@ public class DashboardFragment extends Fragment {
         inflater.inflate(R.menu.fragment_user_dashboard,menu);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        mUser=UserLab.get(getActivity()).getUser(1);
+    }
+
 
 
 

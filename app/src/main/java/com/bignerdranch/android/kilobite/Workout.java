@@ -15,10 +15,10 @@ public class Workout {
     }
 
     private UUID mworkoutID;
-    private String[] mExercise = new String[4];
+    private String[] mExercise = new String[3];
     private Boolean mCompleted;
     private int mWorkoutNum;
-    private int[] mReps = new int[4];
+    private int[] mReps = new int[3];
 
 
     public int getWorkoutNum() {

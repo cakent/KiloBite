@@ -144,7 +144,7 @@ public class GoalSettingFragment extends Fragment {
     private void updateWorkoutReps(double goalCalBurned, int index){
         Workout baseworkout = mWorkouts.get(index);
         int baseNum = baseworkout.getWorkoutNum();
-        int ratio = (int) (goalCalBurned/18)/baseNum;
+        int ratio = (int) ((goalCalBurned*.25)/18)/baseNum;
         int[] newReps = baseworkout.getReps();
         for(int i =0;i<newReps.length;i++){
             newReps[i] = newReps[i]*ratio;
