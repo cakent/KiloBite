@@ -1,5 +1,6 @@
 package com.bignerdranch.android.kilobite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.LayoutInflaterCompat;
@@ -68,6 +69,8 @@ public class WorkoutFragment extends Fragment {
                mUser.addWorkoutCompleted();
                 mUser.setGoalWeight((newGoalWeight-(newGoalWeight/18)));
                 mWorkout.setCompleted(true);
+                Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                startActivity(intent);
 
             }
         });
