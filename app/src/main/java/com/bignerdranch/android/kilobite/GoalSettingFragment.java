@@ -12,11 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bignerdranch.android.kilobite.database.WorkoutBaseHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +32,16 @@ public class GoalSettingFragment extends Fragment {
     private Button mWorkoutButton;
     private User mUser;
     private List<Workout> mWorkouts;
+    private CheckBox sunCheckBox;
+    private CheckBox monCheckBox;
+    private CheckBox tuesCheckBox;
+    private CheckBox wedCheckBox;
+    private CheckBox thursCheckBox;
+    private CheckBox friCheckBox;
+    private CheckBox satCheckBox;
+
+
+    private List<String> mPrefDays;
 
     private static final String TAG ="GoalSettingFragment";
 
@@ -80,13 +92,60 @@ public class GoalSettingFragment extends Fragment {
 
             }
         });
-
+        sunCheckBox = (CheckBox) v.findViewById(R.id.sun);
+        monCheckBox = (CheckBox) v.findViewById(R.id.mon);
+        tuesCheckBox = (CheckBox) v.findViewById(R.id.tues);
+        wedCheckBox = (CheckBox) v.findViewById(R.id.wed);
+        thursCheckBox = (CheckBox) v.findViewById(R.id.thurs);
+        friCheckBox = (CheckBox) v.findViewById(R.id.frid);
+        satCheckBox = (CheckBox) v.findViewById(R.id.sat);
 
 
         mWorkoutButton = (Button) v.findViewById(R.id.getWODSButton);
         mWorkoutButton.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
+
+                List<String> userPrefDays = new ArrayList<>() ;
+
+
+
+                if(sunCheckBox.isChecked())
+                userPrefDays.add("Sunday");
+                else
+                    userPrefDays.remove("Sunday");
+                if(monCheckBox.isChecked())
+                    userPrefDays.add("Monday");
+                else
+                    userPrefDays.remove("Monday");
+                if(tuesCheckBox.isChecked())
+                    userPrefDays.add("Tuesday");
+                else
+                    userPrefDays.remove("Tuesday");
+                if(wedCheckBox.isChecked())
+                    userPrefDays.add("Tuesday");
+                else
+                    userPrefDays.remove("Wednesday");
+                if(thursCheckBox.isChecked())
+                    userPrefDays.add("Wednesday");
+                else
+                    userPrefDays.remove("Thursday");
+                if(friCheckBox.isChecked())
+                    userPrefDays.add("Thursday");
+                else
+                    userPrefDays.remove("Thursday");
+                if(satCheckBox.isChecked())
+                    userPrefDays.add("Friday");
+                else
+                    userPrefDays.remove("Friday");
+                if(satCheckBox.isChecked())
+                    userPrefDays.add("Saturday");
+                else
+                    userPrefDays.remove("Saturday");
+
+
+                mUser.setPrefDays(userPrefDays);
 
                 if(mUser.getCurrentHeight()!=0&&mUser.getCurrentWeight()!=0) {
                    int userWeight =mUser.getCurrentWeight();
@@ -123,6 +182,7 @@ public class GoalSettingFragment extends Fragment {
         mUser=UserLab.get(getActivity()).getUser(userID);
 
 
+
     }
     @Override
     public void onPause(){
@@ -146,9 +206,9 @@ public class GoalSettingFragment extends Fragment {
         int baseNum = baseworkout.getWorkoutNum();
         int ratio = (int) ((goalCalBurned*.25)/18)/baseNum;
         int[] newReps = baseworkout.getReps();
-        for(int i =0;i<newReps.length;i++){
-            newReps[i] = newReps[i]*ratio;
-        }
+
+            newReps[0] = newReps[0]*ratio;
+
         baseworkout.setReps(newReps);
         updateWorkout(baseworkout);
     }
@@ -170,6 +230,13 @@ public class GoalSettingFragment extends Fragment {
         double toGetInRange = difference*BMItoPounds;
         return toGetInRange*3500;
     }
+
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+
+    }
+
 
 
 }

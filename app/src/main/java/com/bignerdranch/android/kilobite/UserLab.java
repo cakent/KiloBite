@@ -74,6 +74,14 @@ public class UserLab {
     }
 
     private static ContentValues getUserContentValues(User user){
+
+
+        StringBuilder daysList = new StringBuilder();
+        for(String s : user.getPrefDays()){
+            daysList.append(s);
+            daysList.append(",");
+        }
+
         ContentValues values = new ContentValues();
         values.put(WorkoutTables.Cols.BMI,Double.toString(user.getBMI()));
         values.put(WorkoutTables.Cols.GOALWEIGHT,Double.toString(user.getGoalWeight()));
@@ -81,6 +89,7 @@ public class UserLab {
         values.put(WorkoutTables.Cols.CURRENTHEIGHT,Integer.toString(user.getCurrentHeight()));
         values.put(WorkoutTables.Cols.WORKOUTSCOMPLETED,Integer.toString(user.getWorkoutsCompleted()));
         values.put(WorkoutTables.Cols.USERID,Integer.toString(user.getUserID()));
+        values.put(WorkoutTables.Cols.PREFDAYS,daysList.toString());
 
         return values;
     }
