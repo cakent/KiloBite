@@ -1,5 +1,8 @@
 package com.bignerdranch.android.kilobite;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
@@ -37,6 +41,7 @@ public class DashboardFragment extends Fragment {
     private Button mWorkoutButton;
     private List<Workout> workouts;
     private static final String TAG ="DashboardFragment";
+    private AlarmManager alarmMgr;
 
 
     @Override
@@ -48,7 +53,7 @@ public class DashboardFragment extends Fragment {
 
 
 
-
+        startAlarm(getActivity());
 
         mBMITextView = (TextView) v.findViewById(R.id.ActualBMI);
         mBMITextView.setText(Double.toString(mUser.getBMI()));
@@ -138,7 +143,18 @@ public class DashboardFragment extends Fragment {
         mUser=UserLab.get(getActivity()).getUser(1);
     }
 
+    public void startAlarm(Context context){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
 
+        alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, NotifcationSender.class);
+        PendingIntent alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+
+        alarmMgr.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, alarmIntent);
+    }
 
 
 

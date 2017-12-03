@@ -89,7 +89,7 @@ public class WorkoutFragment extends Fragment {
             repString=repString+"/"+String.valueOf(reps[i]);
         }
         mExerciseName = (TextView) v.findViewById(R.id.exercise_name);
-        mExerciseName.setText(mUser.getPrefDays().toString());
+        mExerciseName.setText(workoutString);
         mNumOfReps =(TextView) v.findViewById(R.id.exericse_reps);
         mNumOfReps.setText(repString);
 
