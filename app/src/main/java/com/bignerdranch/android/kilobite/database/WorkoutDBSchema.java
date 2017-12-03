@@ -25,6 +25,7 @@ public class WorkoutDBSchema {
             public static final String WORKOUTSCOMPLETED = "Workouts_completed";
             public static final String WORKOUTNUM = "Workout_num";
             public static final String USERID ="User_ID";
+            public static final String PREFDAYS ="Preferred_Days";
         }
     }
 }

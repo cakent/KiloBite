@@ -5,6 +5,8 @@ import android.database.Cursor;
 import com.bignerdranch.android.kilobite.database.UserCursorWrapper;
 import com.bignerdranch.android.kilobite.database.WorkoutDBSchema;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -17,6 +19,16 @@ public class User {
     private double mBMI;
     private int mWorkoutsCompleted;
     private Double mGoalWeight;
+
+    public List<String> getPrefDays() {
+        return mPrefDays;
+    }
+
+    public void setPrefDays(List<String> prefDays) {
+        mPrefDays = prefDays;
+    }
+
+    private List<String> mPrefDays= new ArrayList<>();
 
 
 

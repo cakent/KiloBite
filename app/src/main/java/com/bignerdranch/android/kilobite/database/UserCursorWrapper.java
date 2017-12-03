@@ -7,6 +7,9 @@ import com.bignerdranch.android.kilobite.User;
 import com.bignerdranch.android.kilobite.Workout;
 import com.bignerdranch.android.kilobite.database.WorkoutDBSchema.WorkoutTables;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -26,13 +29,18 @@ public class UserCursorWrapper extends CursorWrapper {
         int CurrentHeight = getInt(getColumnIndex(WorkoutTables.Cols.CURRENTWEIGHT));
         int workoutsCompleted = getInt(getColumnIndex(WorkoutTables.Cols.WORKOUTSCOMPLETED));
         double BMI = getDouble(getColumnIndex(WorkoutTables.Cols.BMI));
+        String PrefDays = getString(getColumnIndex(WorkoutTables.Cols.PREFDAYS));
 
+        PrefDays = PrefDays.replaceAll("\\[", "").replaceAll("\\]","");
+
+        List<String> myList = new ArrayList<String>(Arrays.asList(PrefDays.split(",")));
         User user = new User(id);
         user.setCurrentHeight(CurrentHeight);
         user.setCurrentWeight(CurrentWeight);
         user.setBMI(BMI);
         user.setGoalWeight(GoalWeight);
         user.setWorkoutsCompleted(workoutsCompleted);
+        user.setPrefDays(myList);
 
         return user;
     }
