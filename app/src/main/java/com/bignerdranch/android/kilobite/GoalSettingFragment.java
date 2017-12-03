@@ -1,5 +1,6 @@
 package com.bignerdranch.android.kilobite;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -124,18 +125,14 @@ public class GoalSettingFragment extends Fragment {
                 else
                     userPrefDays.remove("Tuesday");
                 if(wedCheckBox.isChecked())
-                    userPrefDays.add("Tuesday");
+                    userPrefDays.add("Wednesday");
                 else
                     userPrefDays.remove("Wednesday");
                 if(thursCheckBox.isChecked())
-                    userPrefDays.add("Wednesday");
-                else
-                    userPrefDays.remove("Thursday");
-                if(friCheckBox.isChecked())
                     userPrefDays.add("Thursday");
                 else
                     userPrefDays.remove("Thursday");
-                if(satCheckBox.isChecked())
+                if(friCheckBox.isChecked())
                     userPrefDays.add("Friday");
                 else
                     userPrefDays.remove("Friday");
@@ -143,7 +140,6 @@ public class GoalSettingFragment extends Fragment {
                     userPrefDays.add("Saturday");
                 else
                     userPrefDays.remove("Saturday");
-
 
                 mUser.setPrefDays(userPrefDays);
 
@@ -190,6 +186,8 @@ public class GoalSettingFragment extends Fragment {
         UserLab.get(getActivity()).updateUser(mUser);
 
     }
+
+
 
     private void updateUser(){
         UserLab.get(getActivity()).updateUser(mUser);
