@@ -14,15 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by kent on 11/13/17.
@@ -36,8 +31,16 @@ public class DashboardFragment extends Fragment {
     private User mUser;
     private TextView mWodsCompleted;
     private TextView mWeightToLoseTextView;
-    private TextView mExerciseLabel;
-    private TextView mRepLabel;
+    private TextView mExercise1Label;
+    private TextView mExercise2Label;
+    private TextView mExercise3Label;
+    private TextView mExercise4Label;
+    private TextView mExercise5Label;
+    private TextView mRep1Label;
+    private TextView mRep2Label;
+    private TextView mRep3Label;
+    private TextView mRep4Label;
+    private TextView mRep5Label;
     private Button mWorkoutButton;
     private List<Workout> workouts;
     private static final String TAG ="DashboardFragment";
@@ -64,8 +67,16 @@ public class DashboardFragment extends Fragment {
         mWeightToLoseTextView =(TextView) v.findViewById(R.id.CaloritesToBurn);
         mWeightToLoseTextView.setText(Double.toString(mUser.getGoalWeight()));
 
-        mExerciseLabel =(TextView) v.findViewById(R.id.ExerciseLbl);
-        mRepLabel = (TextView) v.findViewById(R.id.RepLbl);
+        mExercise1Label =(TextView) v.findViewById(R.id.Exercise1Lbl);
+        mRep1Label = (TextView) v.findViewById(R.id.reps1Lbl);
+        mExercise2Label =(TextView) v.findViewById(R.id.Exercise2Lbl);
+        mRep2Label = (TextView) v.findViewById(R.id.reps2Lbl);
+        mExercise3Label =(TextView) v.findViewById(R.id.Exercise3lbl);
+        mRep3Label = (TextView) v.findViewById(R.id.reps3lbl);
+        mExercise4Label =(TextView) v.findViewById(R.id.Exercise4Lbl);
+        mRep4Label = (TextView) v.findViewById(R.id.reps4lbl);
+        mExercise5Label =(TextView) v.findViewById(R.id.Exercise5Lbl);
+        mRep5Label = (TextView) v.findViewById(R.id.reps5lbl);
 
         if(mUser.getWorkoutsCompleted()<workouts.size()){
 
@@ -73,21 +84,18 @@ public class DashboardFragment extends Fragment {
             String[] exercises=mWorkout.getExercise();
             int[] reps = mWorkout.getReps();
 
-            String workoutString ="";
-            String repString="";
-
-            workoutString=exercises[0];
-            for(int i =1;i<exercises.length;i++){
-                workoutString=workoutString+"/"+exercises[i];
-            }
-            repString=String.valueOf(reps[0]);
-            for(int i =1;i<reps.length;i++){
-                repString=repString+"/"+String.valueOf(reps[i]);
-            }
 
 
-            mExerciseLabel.setText(workoutString);
-            mRepLabel.setText(repString);
+            mExercise1Label.setText(exercises[1]);
+            mRep1Label.setText(Integer.toString(reps[1]));
+            mExercise2Label.setText(exercises[2]);
+            mRep2Label.setText(Integer.toString(reps[2]));
+            mExercise3Label.setText(exercises[3]);
+            mRep3Label.setText(Integer.toString(reps[3]));
+            mExercise4Label.setText(exercises[4]);
+            mRep4Label.setText(Integer.toString(reps[4]));
+            mExercise5Label.setText(exercises[5]);
+            mRep5Label.setText(Integer.toString(reps[5]));
         }
 
         mWorkoutButton = (Button) v.findViewById(R.id.workoutButton);
