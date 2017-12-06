@@ -1,10 +1,147 @@
 <resources>
     <string name="app_name">KiloBite</string>
     <string name="goal_weight">Goal Weight</string>
-    <string name="current_weight">Current Weight</string>
-    <string name="current_height">Current Height</string>
+    <string name="current_weight">Current Weight(lbs)</string>
+    <string name="current_height">Current Height(in)</string>
     <string name="submit_button">Get my Workouts!</string>
     <string name="change_goals">Update Goals</string>
     <string name="show_subtitle">Show Subtitle</string>
     <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="glossary">Glossary</string>
+    <string name="exercise_descriptions">BEAR CRAWL:
+-Get down on all fours with your arms straight, hands below your shoulders, and
+your knees bent 90 degrees below your hips (only your hands and toes should be
+touching the ground)
+-While keeping your back flat, crawl forward and backward moving opposite
+hands and feet in unison (right hand and left foot/ left hand and right foot)
+\n
+ BROAD JUMP:
+-Place your feet shoulder-width apart
+-Keep your toes pointed straight
+-Stretch up with your arms and rise up onto the balls of your feet with your hips
+extended
+-Bring your arms back behind you and bend your knees and hips
+-Drive as powerfully as possible off of the ground while simultaneously throwing
+your arms forward as forcefully as possible.
+-Once you are airborne, extend your hips up and out and throw your feet forward
+(this will add momentum to the jump, keeping you in the air longer)
+-Land flatfooted with your weight slightly forward. You must stick the landing and
+not fall backward or forward, and your hands cannot touch the ground at any time
+after landing.
+\n
+        BURPEES:
+-Begin in a standing position
+- Move into a squat position with your hands on the ground
+- Kick your feet back into a plank position, while keeping your arms extended
+- Immediately return your feet into squat position.
+- Stand up from the squat position
+\n
+        CLOSE-GRIP PUSH-UPS:
+-Lay down on the ground face down
+        -Make a diamond with your hands on the ground, or simply bring your hands
+together within the distance between your shoulders
+-For each repetition, use your chest and arms to push yourself up from the ground
+- At the top of the repetition, let your torso fall back to the rest position without
+letting your chest touch the ground
+\n
+        DIPS:
+- Locate the dip/raise machine
+-Grab the bars and jump up (balance yourself with locked elbows)
+-Lower your body by bending your arms (lean your torso slightly forward)
+-Go down until your shoulders are below your elbows at the bottom
+-Lift your body back up to the starting position by straightening your arms
+-Balance yourself with your shoulders over your hands (lock your elbows)
+\n
+FLUTTER KICKS(LEG):
+Lie on your back with your legs extended and your arms alongside your hips
+(palms down)
+ Lift your legs 4 to 6 inches off of the floor (press your lower back into the
+mat/floor)
+Keep your legs straight as you rhythmically raise one leg higher, then switch
+(move in a fluttering, up and down motion)
+\n
+GLUTE-BRIDGES:
+-Lie face-down on the floor, with your knees bent and feet flat on the ground, or
+with your heels in contact with a stable, elevated surface
+-Keep your arms at your side with your elbows and shoulders flat against the
+ground to help brace your upper body
+-For each repetition, lift your hips up off the ground until your knees, hips, and
+shoulders form a straight line and hold the position for 2-3 seconds before slowly
+easing yourself down.
+\n
+
+KNEE-RAISES:
+
+- Locate the dip/raise machine
+-Put your back against the pad, and hold your body up by resting your arms/hands
+on the parallel bars
+- Allow your legs to dangle and then slowly lift your knees toward your chest. The
+motion should be controlled and deliberate as you bring your knees up until your
+thighs are parallel to the floor
+- Return your legs to the starting position, letting them down slowly.
+        \n
+LUNGES(LEG):
+-Keep your upper body straight, with your shoulders back and relaxed and chin up
+(pick a point to stare at in front of you so you don’t keep looking down)
+-Step forward with one leg, lowering your hips until both knees are bent at about a
+90-degree angle
+-Make sure your front knee is directly above your ankle (not pushed out too far),
+and make sure your other knee doesn’t touch the floor
+-Keep the weight in your heels as you push back up to the starting position
+\n
+
+MOUNTAIN CLIMBERS:
+-Start in a plank position with your arms and legs straightened.
+-Keep your abs pulled in and your body straight.
+-Squeeze your glutes and pull your shoulders away from your ears
+-Pull your right knee into your chest.  As the knee draws to the chest, pull your abs
+in even tighter to be sure your body doesn’t sag or come out of its plank position.
+- Quickly switch and pull the left knee in. At the same time you push your right leg
+back, pull your left knee in to the chest using the same form
+-Continue to switch knees. Pull the knees in right, left, and right, left — always
+switching simultaneously so that you are using a “running” motion.
+-As you begin to move more quickly be in constant awareness of your body
+position and be sure to keep a straight line in your spine and don’t let your head
+droop
+\n
+PULL-UPS:
+-Hang from a pull-up bar with hands facing away from body and feet off the
+ground
+- Using your shoulders and arms, lift yourself up until your chin is above the bar
+-Release back to a normal hang with shoulder blades level and apart
+\n
+PUSH-UPS:
+-Lay down on the ground face down
+-Set your hands on the floor at a slightly larger distance apart from the length of
+the distance of your shoulders
+-For each repetition, use your chest and arms to push yourself up from the ground
+-At the top of the repetition, let your torso fall back to the rest position without
+letting your chest touch the ground
+\n
+SIT-UPS:
+-Lie on your back with your arms crossed over your chest
+-Keep your feet flat on the ground and your knees bent
+-For each repetition, raise your torso using your abdominals until your elbows
+meet your knees or thighs
+-Let your torso gently fall back to the ground
+\n
+SQUATS:
+\nStand with your feet facing forward about shoulder length apart and your chest
+and shoulders up
+\nFor each repetition, Look straight ahead and, while keeping your back straight,
+lower your body using your knees and leg muscles
+\nBe sure to keep your knees in line with your feet and keep your feet straight and
+flat
+\nOnce your glutes are lowered to as close to your knee level as they can go,
+straighten your knees and raise yourself back up to rest position
+\n
+V-UPS:
+-Lie on your back with your arms raised over your head straight out and your legs
+extended straight out on the floor
+-Keep your knees and elbows straight throughout your repetitions
+-For each repetition, raise both your legs and torso simultaneously straight up until
+your hands meet your toes and your glutes are the only thing touching the ground
+-Hold this position for one count, or a second, and then gently let your legs and
+back fall back to rest position
+</string>
 </resources>

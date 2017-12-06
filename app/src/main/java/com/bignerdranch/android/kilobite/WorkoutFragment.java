@@ -6,9 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -53,7 +57,7 @@ public class WorkoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID workoutId = (UUID) getArguments().getSerializable(ARG_WORKOUT_ID);
         mWorkout= WorkoutLab.get(getActivity()).getWorkout(workoutId);
-
+        setHasOptionsMenu(true);
         mUser=UserLab.get(getActivity()).getUser(1);
         Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
     }
@@ -65,6 +69,17 @@ public class WorkoutFragment extends Fragment {
         UserLab.get(getActivity()).updateUser(mUser);
         Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.fire_glossary:
+                Intent intent = new Intent(getActivity(),GlossaryActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -113,5 +128,11 @@ public class WorkoutFragment extends Fragment {
         mRep5Label.setText(Integer.toString(reps[5]));
 
         return v;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        super.onCreateOptionsMenu(menu,inflater);
+        inflater.inflate(R.menu.fragment_workout,menu);
     }
 }
