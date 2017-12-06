@@ -58,7 +58,7 @@ public class WorkoutLab {
             if(getWorkouts().size()<1) {
                 Workout WOD = new Workout();
                 WOD.setCompleted(false);
-                WOD.setExercise(new String[]{"“rounds”,”Pushups”,”Squats”,”Burpees”,”Lunges/Leg”,”Situps”"});
+                WOD.setExercise(new String[]{"rounds”,”Pushups”,”Squats”,”Burpees”,”Lunges/Leg”,”Situps" });
                 WOD.setReps(new int[]{1,5,10,5,10,15});
                 WOD.setWorkoutNum(30);
                 addWorkout(WOD);

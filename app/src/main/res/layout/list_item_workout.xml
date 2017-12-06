@@ -4,7 +4,7 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="wrap_content"
-                                             android:background="@android:color/holo_green_light"
+
                                              android:orientation="vertical"
                                              tools:layout_editor_absoluteX="0dp"
                                              tools:layout_editor_absoluteY="81dp">
@@ -18,11 +18,11 @@
         android:background="@android:color/transparent"
         android:text="Exercise Name"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.538"
         tools:layout_editor_absoluteX="165dp"/>
 
     <TextView
@@ -32,7 +32,7 @@
         android:background="@android:color/transparent"
         android:text="Rep Count"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+
         android:textStyle="bold"
         app:layout_constraintRight_toLeftOf="@+id/exercise_name"
         android:layout_marginRight="8dp"

@@ -6,9 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -22,8 +26,18 @@ import java.util.UUID;
 public class WorkoutFragment extends Fragment {
 
     private Workout mWorkout;
-    private TextView mExerciseName;
-    private TextView mNumOfReps;
+
+    private TextView mExercise1Label;
+    private TextView mExercise2Label;
+    private TextView mExercise3Label;
+    private TextView mExercise4Label;
+    private TextView mExercise5Label;
+    private TextView mRep1Label;
+    private TextView mRep2Label;
+    private TextView mRep3Label;
+    private TextView mRep4Label;
+    private TextView mRep5Label;
+    private TextView mStructureLabel;
     private static final String ARG_WORKOUT_ID="workout_id";
     private Button mCompleteButton;
     private User mUser;
@@ -43,7 +57,7 @@ public class WorkoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID workoutId = (UUID) getArguments().getSerializable(ARG_WORKOUT_ID);
         mWorkout= WorkoutLab.get(getActivity()).getWorkout(workoutId);
-
+        setHasOptionsMenu(true);
         mUser=UserLab.get(getActivity()).getUser(1);
         Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
     }
@@ -55,6 +69,17 @@ public class WorkoutFragment extends Fragment {
         UserLab.get(getActivity()).updateUser(mUser);
         Log.d(TAG,"workouts completed:"+mUser.getWorkoutsCompleted());
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.fire_glossary:
+                Intent intent = new Intent(getActivity(),GlossaryActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -74,25 +99,40 @@ public class WorkoutFragment extends Fragment {
 
             }
         });
-        String[] workouts=mWorkout.getExercise();
+        String[] exercises=mWorkout.getExercise();
         int[] reps = mWorkout.getReps();
 
-         String workoutString ="";
-        String repString="";
+        mStructureLabel =(TextView) v.findViewById(R.id.StructureLbl);
 
-        workoutString=workouts[0];
-        for(int i =1;i<workouts.length;i++){
-            workoutString=workoutString+"/"+workouts[i];
-        }
-        repString=String.valueOf(reps[0]);
-        for(int i =1;i<reps.length;i++){
-            repString=repString+"/"+String.valueOf(reps[i]);
-        }
-        mExerciseName = (TextView) v.findViewById(R.id.exercise_name);
-        mExerciseName.setText(workoutString);
-        mNumOfReps =(TextView) v.findViewById(R.id.exericse_reps);
-        mNumOfReps.setText(repString);
+        mExercise1Label =(TextView) v.findViewById(R.id.Exercise1Lbl);
+        mRep1Label = (TextView) v.findViewById(R.id.reps1Lbl);
+        mExercise2Label =(TextView) v.findViewById(R.id.Exercise2Lbl);
+        mRep2Label = (TextView) v.findViewById(R.id.reps2Lbl);
+        mExercise3Label =(TextView) v.findViewById(R.id.Exercise3lbl);
+        mRep3Label = (TextView) v.findViewById(R.id.reps3lbl);
+        mExercise4Label =(TextView) v.findViewById(R.id.Exercise4Lbl);
+        mRep4Label = (TextView) v.findViewById(R.id.reps4lbl);
+        mExercise5Label =(TextView) v.findViewById(R.id.Exercise5Lbl);
+        mRep5Label = (TextView) v.findViewById(R.id.reps5lbl);
+
+        mStructureLabel.setText(""+Integer.toString(reps[0])+" "+exercises[0]);
+        mExercise1Label.setText(exercises[1]);
+        mRep1Label.setText(Integer.toString(reps[1]));
+        mExercise2Label.setText(exercises[2]);
+        mRep2Label.setText(Integer.toString(reps[2]));
+        mExercise3Label.setText(exercises[3]);
+        mRep3Label.setText(Integer.toString(reps[3]));
+        mExercise4Label.setText(exercises[4]);
+        mRep4Label.setText(Integer.toString(reps[4]));
+        mExercise5Label.setText(exercises[5]);
+        mRep5Label.setText(Integer.toString(reps[5]));
 
         return v;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        super.onCreateOptionsMenu(menu,inflater);
+        inflater.inflate(R.menu.fragment_workout,menu);
     }
 }

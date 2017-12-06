@@ -72,8 +72,9 @@ public class WorkoutListFragment extends Fragment {
         private Workout mWorkout;
         public void bind(Workout workout,int i){
             mWorkout= workout;
-            mRepTextView.setText("Workout "+i+":");
-            mExerciseTextView.setText(Arrays.toString(mWorkout.getExercise()));
+            String[] exercise = mWorkout.getExercise();
+            int[] reps =mWorkout.getReps();
+            mExerciseTextView.setText(Integer.toString(reps[0])+" "+exercise[0]);
         }
     }
 
