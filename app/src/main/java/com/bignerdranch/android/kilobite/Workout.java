@@ -15,7 +15,7 @@ public class Workout {
     }
 
     private UUID mworkoutID;
-    private String[] mExercise = new String[6];
+    private String[] mExercise ={"a","b","c","d","e","f"};
     private Boolean mCompleted;
     private int mWorkoutNum;
     private int[] mReps = new int[6];

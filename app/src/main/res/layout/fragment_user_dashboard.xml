@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/Exercise2Lbl"
         android:layout_width="127dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -27,7 +27,7 @@
 
     <TextView
         android:id="@+id/BMILabel"
-        android:layout_width="113dp"
+        android:layout_width="118dp"
         android:layout_height="47dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="11dp"
@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="113dp"
+        android:layout_width="118dp"
         android:layout_height="47dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -71,23 +71,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NextWorkout"/>
-
-    <TextView
-        android:id="@+id/RepLbl"
-        android:layout_width="127dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/featuregreen"
-        android:text="reps"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Exercise1Lbl"/>
 
     <TextView
         android:id="@+id/NextWorkout"
@@ -126,18 +109,18 @@
 
     <TextView
         android:id="@+id/CalLbl"
-        android:layout_width="113dp"
+        android:layout_width="118dp"
         android:layout_height="47dp"
         android:layout_marginEnd="231dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/featureblue"
         android:gravity="center_vertical"
         android:text="Calories to Burn"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="@+id/textView5"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textView5"/>
 
     <TextView
