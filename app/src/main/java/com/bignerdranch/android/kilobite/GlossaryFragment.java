@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  */
 
 public class GlossaryFragment extends Fragment {
-
+// clean this up
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_glossary, container,false);
 
