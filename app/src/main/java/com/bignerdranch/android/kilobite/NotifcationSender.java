@@ -48,7 +48,7 @@ public class NotifcationSender extends BroadcastReceiver {
         }
 
     }
-
+    //get rid of this, and fix this method
     private String getDayOfWeek(int value){
         String day = "";
         switch(value){
