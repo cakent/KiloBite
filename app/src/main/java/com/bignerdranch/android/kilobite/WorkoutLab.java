@@ -55,6 +55,7 @@ public class WorkoutLab {
 
         mContext= context.getApplicationContext();
         mDatabase= new WorkoutBaseHelper(mContext).getWritableDatabase();
+        //get rid of all of this garbage. generate workouts in background thread
             if(getWorkouts().size()<1) {
                 Workout WOD = new Workout();
                 WOD.setCompleted(false);
