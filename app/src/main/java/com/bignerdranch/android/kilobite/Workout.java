@@ -17,6 +17,7 @@ public class Workout {
     private UUID mworkoutID;
     private String[] mExercise = new String[6];
     private Boolean mCompleted;
+    // shouldn't be calories
     private int mWorkoutNum;
     private int[] mReps = new int[6];
 
