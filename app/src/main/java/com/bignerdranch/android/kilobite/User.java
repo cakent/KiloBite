@@ -16,6 +16,8 @@ import java.util.UUID;
 public class User {
     private int mCurrentWeight;
     private int mCurrentHeight;
+    
+    // need to get rid of BMI stuff
     private double mBMI;
     private int mWorkoutsCompleted;
     private Double mGoalWeight;
