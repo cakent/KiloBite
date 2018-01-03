@@ -7,7 +7,7 @@ import com.bignerdranch.android.kilobite.SingleFragmentActivity;
  */
 
 public class WorkoutDBSchema {
-
+//also should be some stuff for picking equipment
     public static final class WorkoutTables {
         public static final String WOD_NAME = "Workouts";
         public static final String USER_STATS = "User";
