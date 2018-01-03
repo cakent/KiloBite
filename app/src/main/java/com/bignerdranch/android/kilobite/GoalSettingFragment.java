@@ -110,7 +110,7 @@ public class GoalSettingFragment extends Fragment {
 
                 List<String> userPrefDays = new ArrayList<>() ;
 
-
+//fix this for ints
 
                 if(sunCheckBox.isChecked())
                 userPrefDays.add("Sunday");
