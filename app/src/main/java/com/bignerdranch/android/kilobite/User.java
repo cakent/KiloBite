@@ -29,7 +29,7 @@ public class User {
     public void setPrefDays(List<String> prefDays) {
         mPrefDays = prefDays;
     }
-
+    //should be <Int>
     private List<String> mPrefDays= new ArrayList<>();
 
 
